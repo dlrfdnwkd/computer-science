@@ -21,8 +21,7 @@
   
 ## 코드
   ```java
-  void insertion_Sort(int[] array)
-  {
+  void insertion_sort(int[] array){
     for(int index = 1 ; index < array.length ; index++){
     
       int temp = array[index];
