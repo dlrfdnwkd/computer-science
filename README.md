@@ -14,6 +14,7 @@
 
 ## Language
 - [HTML](https://github.com/dlrfdnwkd/computer-science/blob/main/Language/HTML.md)
+- [JavaScript](https://github.com/dlrfdnwkd/computer-science/blob/main/Language/JavaScript.md)
 
 <br>
 
