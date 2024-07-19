@@ -7,5 +7,5 @@ SELECT
         WHEN out_date IS NULL THEN '출고미정'
         ELSE '출고대기'
     END AS 출고여부
-FROM food_order
+FROM food_order 
 ORDER BY order_id;
