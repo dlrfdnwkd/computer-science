@@ -5,20 +5,19 @@ SELECT
 FROM
     user_info
 WHERE
-    DATE_FORMAT(joined, '%Y') = '2021';
-    
+    YEAR(joined) = 2021;
+
 SELECT
-    DATE_FORMAT(o.sales_date, '%Y') AS YEAR
-    , DATE_FORMAT(o.sales_date, '%m') AS MONTH
-    , COUNT(DISTINCT o.user_id) AS PUCHASED_USERS
-    , ROUND(COUNT(DISTINCT o.user_id) / @total, 1) AS PUCHASED_RATIO
+    YEAR(o.sales_date) AS year,
+    MONTH(o.sales_date) AS month,
+    COUNT(DISTINCT o.user_id) AS purchased_users,
+    ROUND(COUNT(DISTINCT o.user_id) / @total, 1) AS puchased_ratio
 FROM
     online_sale o
-JOIN user_info u ON o.user_id = u.user_id AND DATE_FORMAT(joined, '%Y') = '2021'
-GROUP BY 
-    YEAR
-    , MONTH
+JOIN user_info u ON o.user_id = u.user_id AND YEAR(u.joined) = 2021
+GROUP BY
+    year,
+    month
 ORDER BY
-    YEAR
-    , MONTH;
-    
+    year,
+    month;
